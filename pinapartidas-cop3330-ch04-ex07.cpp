@@ -10,7 +10,7 @@ int main()
     string operand2;
     int operand1Num;
     int operand2Num;
-    int correct;
+    int correct = 0;
 
     // All types of acceptable user inputs
     string corrInput[30] = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
