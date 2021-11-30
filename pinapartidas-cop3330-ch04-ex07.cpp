@@ -2,6 +2,7 @@
 
 int main() 
 {
+    // Data dictionary
     int i;
     string operation;
     string operand1;
@@ -9,15 +10,19 @@ int main()
     int operand1Num;
     int operand2Num;
     int correct;
+
+    // All types of acceptable user inputs
     string corrInput[30] = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
     "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
+    // Asks for user input
     cout << "Please enter your operation:\nOperation: "; 
 
     cin >> operation;
     cout << "\nOperand 1: ";
     cin >> operand1;
 
+    // Checks if input was acceptable
     while (correct != 1)
     {
         for (i = 0; i < 30; i++)
@@ -33,14 +38,18 @@ int main()
         }
     }
 
+    // Calls stringToNum to make the string into an int depending on input for operand 1
     operand1Num = stringToNum(operand1);
 
+    // Reset flag
     correct = 0;
 
+    // Asks for user input
     cout << "\nOperand 2: ";
     cin >> operand2;
     cout << "\n";
 
+    // Checks if input was acceptable
     while (correct != 1)
     {
         for (i = 0; i < 30; i++)
@@ -56,8 +65,10 @@ int main()
         }
     }
 
+    // Calls stringToNum to make the string into an int depending on input for operand 2
     operand2Num = stringToNum(operand2);
 
+    // Output depending on operation
     if (operation == "+" || operation == "plus")
         cout << "The sum of " << operand1 << " and " << operand2 << " is " << operand1Num + operand2Num << ".\n";
     else if (operation == "-" || operation == "minus")
@@ -72,10 +83,12 @@ int main()
 
 int stringToNum (string operand)
 {
+    // Data dictionary
     int operandNum;
     string corrInput[30] = {"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
     "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
+    // Sets string to corresponding integer
     if (operand == corrInput[0] || operand == corrInput[10] || operand == corrInput[20])
         operandNum = 0;
     else if (operand == corrInput[1] || operand == corrInput[11] || operand == corrInput[21])
